@@ -28,8 +28,8 @@ let suite =
       );
 
     "prefixes" >:: (fun _ -> 
-        skip_if true "skip";
-        assert_equal (Mapreduce.prefixes [1;2;3;4]) [[1]; [1;2]; [1;2;3]; [1;2;3;4]]
+        assert_equal (Mapreduce.take [1;2;3;4] 2) [1;2]
+        (*assert_equal (Mapreduce.prefixes [1;2;3;4]) [[1]; [1;2]; [1;2;3]; [1;2;3;4]]*)
       );
 
     "flatten" >:: (fun _ -> 
